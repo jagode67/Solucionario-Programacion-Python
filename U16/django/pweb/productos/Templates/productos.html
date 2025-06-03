@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+        text-align:center
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: #0056b3;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        border: 1px #28a745 solid;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 5px;
+        color: #28a745;
+    }
+    .btn-editar:hover {
+        background-color: #218838;
+    }
+    .btn-editar {
+        padding: 8px 12px;
+        border: 1px #28a745 solid;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 5px;
+        color: #28a745;
+    }
+
+    .btn-borrar {
+        padding: 8px 12px;
+        border: 1px #dc3545 solid;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 5px;
+        color: #dc3545;
+    }
+
+    .btn-borrar:hover {
+        background-color: #c82333;
+    }
+    .contenedor-boton {
+        display: flex;
+        justify-content: flex-end; /* Alinea el botón a la derecha */
+        margin-bottom: 10px; /* Espaciado opcional */
+    }
+    </style>
+</head>
+<body>
+<h2>Listado de productos</h2>
+<div class="contenedor-boton">
+    <button class="btn btn-editar" onclick="window.location.href='/nuevoP'">Nuevo producto</button>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Stock</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto.id }}</td>
+            <td><a href="/producto/{{ producto.id }}">{{ producto.nombre }}</a></td>
+            <td>{{ producto.stock }}</td>
+            <td>
+                <button class="btn btn-editar" onclick="window.location.href='/editarP/{{ producto.id }}'">Editar</button>
+            </td>
+            <td>
+                <button class="btn btn-borrar" onclick="window.location.href='/eliminarP/{{ producto.id }}'">Borrar</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p>Cantidad de productos: {{nProductos}}</p>
+
+</body>
+</html>

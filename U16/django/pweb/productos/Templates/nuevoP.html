@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Producto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .btn-submit {
+        padding: 8px 12px;
+        border: 1px #28a745 solid;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 5px;
+        color: #28a745;
+        }
+
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+
+        .btn-cancel {
+        padding: 8px 12px;
+        border: 1px #dc3545 solid;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 5px;
+        color: #dc3545;
+        }
+
+        .btn-cancel:hover {
+            background-color: #c82333;
+        }
+
+        input {
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nuevo Producto</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ formulario }}
+
+        <div style="text-align: center; margin-top: 10px;">
+            <button type="button" class="btn-cancel" onclick="window.location.href='/productos'">Cancelar</button>
+            <button type="submit" class="btn-submit">Grabar</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar persona</title>
+</head>
+<body>
+<h1>Nueva Persona</h1>
+<form method="POST">
+  {{formulario}}
+  <button type="submit">Grabar</button>
+  {% csrf_token %}
+</form>
+</body>
+</html>

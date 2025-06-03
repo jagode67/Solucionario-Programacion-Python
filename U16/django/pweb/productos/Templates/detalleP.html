@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Producto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+
+        .detalle-container {
+            display: inline-block;
+            text-align: left;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-volver {
+                padding: 8px 12px;
+        border: 1px #007bff solid;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 5px;
+        color: #007bff;
+        }
+
+        .btn-volver:hover {
+
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="detalle-container">
+        <h2>Detalle del Producto</h2>
+        <p><strong>Id:</strong> {{ producto.id }}</p>
+        <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+        <p><strong>Stock:</strong> {{ producto.stock }}</p>
+        <a href="/productos" class="btn btn-volver">Volver</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personas</title>
+</head>
+<body>
+<h1>Página principal de Personas</h1>
+<p>Información</p>
+<p>Número personas: {{nPersonas}}</p>
+<ul>
+    {% for persona in personas %}
+    <li>Persona: {{persona.id}}->{{persona.nombre}} {{persona.apellido}} - {{persona.email}}
+        <a href="/persona/{{persona.id}}">Ver detalle</a>
+        <a href="/editar/{{persona.id}}">Modificar</a>
+        <a href="/eliminar/{{persona.id}}">Borrar</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="/nueva">Nueva persona</a>
+</body>
+</html>

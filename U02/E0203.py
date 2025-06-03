@@ -1,0 +1,6 @@
+numero = input("Introduce un número: ")
+num_decimal = int(numero)
+print(f"Número original: {numero}")
+print(f"Binario: {bin(num_decimal)}")
+print(f"Octal: {oct(num_decimal)}")
+print(f"Hexadecimal: {hex(num_decimal)}")
